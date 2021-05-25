@@ -4,7 +4,7 @@ class CreateCampaigns < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :description
       t.integer :goal
-      t.belongs_to :user
+      t.integer :user
 
       t.timestamps
     end

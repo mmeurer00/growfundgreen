@@ -48,4 +48,4 @@ class CampaignsController < ApplicationController
 #     def campaign_params
 #       params.require(:campaign).permit(:name, :description, :goal, :donation_id, :user_id)
 #     end
-# end
+end
