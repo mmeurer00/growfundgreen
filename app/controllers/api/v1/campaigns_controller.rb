@@ -19,7 +19,7 @@ class Api::V1::CampaignsController < ApplicationController
       @campaign = Campaign.new(campaign_params)
 
       if @campaign.save
-        render json: @campaign, status: :created, location: @campaign
+        render json: @campaign, status: :created, location: api_v1_campaign_path(@campaign)
       else
         render json: @campaign.errors, status: :unprocessable_entity
       end
@@ -36,7 +36,11 @@ class Api::V1::CampaignsController < ApplicationController
 
     # DELETE /campaigns/1
     def destroy
-      @campaign.destroy
+      if @campaign.destroy
+        render json: {message: "Successfully deleted"}
+      else
+        render json: {message: "Did not delete"}
+      end
     end
 
     private

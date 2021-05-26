@@ -19,33 +19,18 @@ ActiveRecord::Schema.define(version: 2021_05_24_184530) do
     t.string "name"
     t.string "description"
     t.integer "goal"
-    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 
   create_table "donations", force: :cascade do |t|
     t.string "comment"
     t.float "price"
     t.bigint "campaign_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["campaign_id"], name: "index_donations_on_campaign_id"
-    t.index ["user_id"], name: "index_donations_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "name"
-    t.string "email"
-    t.text "bio"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "donations", "campaigns"
-  add_foreign_key "donations", "users"
 end
