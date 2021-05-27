@@ -2146,3 +2146,619 @@ Processing by Api::V1::CampaignsController#destroy as */*
 Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 7.4ms | Allocations: 1818)
 
 
+Started POST "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:39:14 -0400
+Processing by Api::V1::CampaignsController#create as JSON
+  Parameters: {"name"=>"New Campaign", "description"=>"Plastic", "goal"=>"23097", "campaign"=>{"name"=>"New Campaign", "description"=>"Plastic", "goal"=>"23097"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:21:in `create'
+  [1m[36mCampaign Create (7.3ms)[0m  [1m[32mINSERT INTO "campaigns" ("name", "description", "goal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "New Campaign"], ["description", "Plastic"], ["goal", 23097], ["created_at", "2021-05-26 17:39:14.570893"], ["updated_at", "2021-05-26 17:39:14.570893"]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:21:in `create'
+Completed 201 Created in 74ms (Views: 1.8ms | ActiveRecord: 25.3ms | Allocations: 3868)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:39:21 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 1.8ms | Allocations: 1289)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:46:49 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 84ms (Views: 80.6ms | ActiveRecord: 20.8ms | Allocations: 3252)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:47:07 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.9ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:47:17 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:47:41 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 2.3ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:47:52 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 2.6ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:47:59 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 1.2ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:48:11 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.6ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:48:21 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 1.6ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:48:32 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 3.2ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:48:49 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 1.6ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:49:04 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 1.3ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:49:20 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 1.1ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:49:27 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 86ms (Views: 83.9ms | ActiveRecord: 1.5ms | Allocations: 1231)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:49:39 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 1230)
+
+
+Started DELETE "/api/v1/campaigns/undefined" for 127.0.0.1 at 2021-05-26 13:49:47 -0400
+Processing by Api::V1::CampaignsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:49:in `set_campaign'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms | Allocations: 537)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Campaign with 'id'=undefined):
+  
+app/controllers/api/v1/campaigns_controller.rb:49:in `set_campaign'
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:49:49 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.0ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.0ms | Allocations: 1229)
+
+
+Started DELETE "/api/v1/campaigns/undefined" for 127.0.0.1 at 2021-05-26 13:49:51 -0400
+Processing by Api::V1::CampaignsController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:49:in `set_campaign'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 508)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Campaign with 'id'=undefined):
+  
+app/controllers/api/v1/campaigns_controller.rb:49:in `set_campaign'
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:49:54 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 1229)
+
+
+Started PATCH "/api/v1/campaigns/undefined" for 127.0.0.1 at 2021-05-26 13:50:18 -0400
+Processing by Api::V1::CampaignsController#update as JSON
+  Parameters: {"name"=>"Plastic", "description"=>"save rabbit!", "goal"=>"2309", "id"=>"undefined", "campaign"=>{"name"=>"Plastic", "description"=>"save rabbit!", "goal"=>"2309"}}
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:49:in `set_campaign'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 508)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Campaign with 'id'=undefined):
+  
+app/controllers/api/v1/campaigns_controller.rb:49:in `set_campaign'
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:50:20 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.8ms | Allocations: 1229)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:51:39 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 23ms (Views: 18.3ms | ActiveRecord: 0.6ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:51:55 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.9ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:52:02 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 2.9ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:52:04 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.9ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:52:06 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.3ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:53:03 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 1230)
+
+
+Started PATCH "/api/v1/campaigns/2" for 127.0.0.1 at 2021-05-26 13:53:07 -0400
+Processing by Api::V1::CampaignsController#update as JSON
+  Parameters: {"name"=>"Save the Whales", "description"=>"Stop whaling", "goal"=>"50000555", "id"=>"2", "campaign"=>{"name"=>"Save the Whales", "description"=>"Stop whaling", "goal"=>"50000555"}}
+  [1m[36mCampaign Load (0.7ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:49:in `set_campaign'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:30:in `update'
+  [1m[36mCampaign Update (1.4ms)[0m  [1m[33mUPDATE "campaigns" SET "goal" = $1, "updated_at" = $2 WHERE "campaigns"."id" = $3[0m  [["goal", 50000555], ["updated_at", "2021-05-26 17:53:07.476579"], ["id", 2]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:30:in `update'
+Completed 200 OK in 24ms (Views: 0.9ms | ActiveRecord: 8.2ms | Allocations: 2275)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 13:53:10 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 70ms (Views: 3.3ms | ActiveRecord: 0.4ms | Allocations: 1231)
+
+
+Started DELETE "/api/v1/campaigns/8" for 127.0.0.1 at 2021-05-26 13:53:18 -0400
+Processing by Api::V1::CampaignsController#destroy as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mCampaign Load (0.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:49:in `set_campaign'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:39:in `destroy'
+  [1m[36mCampaign Destroy (2.0ms)[0m  [1m[31mDELETE FROM "campaigns" WHERE "campaigns"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:39:in `destroy'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 5.1ms | Allocations: 1818)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:34:48 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 86ms (Views: 83.0ms | ActiveRecord: 23.1ms | Allocations: 3201)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:34:50 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 1.8ms | Allocations: 1127)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:36:02 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.0ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 1.0ms | Allocations: 1128)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:36:24 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 2.3ms | Allocations: 1127)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:36:37 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.6ms | Allocations: 1127)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:39:16 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.7ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.7ms | Allocations: 1127)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:39:21 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 1.8ms | Allocations: 1127)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:40:29 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 33ms (Views: 23.6ms | ActiveRecord: 3.5ms | Allocations: 1127)
+
+
+Started POST "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:40:35 -0400
+Processing by Api::V1::CampaignsController#create as JSON
+  Parameters: {"name"=>"news", "description"=>"asdf", "goal"=>"456", "campaign"=>{"name"=>"news", "description"=>"asdf", "goal"=>"456"}}
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:21:in `create'
+  [1m[36mCampaign Create (10.1ms)[0m  [1m[32mINSERT INTO "campaigns" ("name", "description", "goal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "news"], ["description", "asdf"], ["goal", 456], ["created_at", "2021-05-26 18:40:35.240120"], ["updated_at", "2021-05-26 18:40:35.240120"]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (9.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:21:in `create'
+Completed 201 Created in 41ms (Views: 1.8ms | ActiveRecord: 20.0ms | Allocations: 1856)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:40:37 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.8ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:43:15 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 35ms (Views: 26.8ms | ActiveRecord: 2.4ms | Allocations: 1230)
+
+
+Started PATCH "/api/v1/campaigns/9" for 127.0.0.1 at 2021-05-26 14:43:26 -0400
+Processing by Api::V1::CampaignsController#update as JSON
+  Parameters: {"name"=>"hwllo", "description"=>"asdf", "goal"=>"456", "id"=>"9", "campaign"=>{"name"=>"hwllo", "description"=>"asdf", "goal"=>"456"}}
+  [1m[36mCampaign Load (0.7ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:49:in `set_campaign'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:30:in `update'
+  [1m[36mCampaign Update (3.6ms)[0m  [1m[33mUPDATE "campaigns" SET "name" = $1, "updated_at" = $2 WHERE "campaigns"."id" = $3[0m  [["name", "hwllo"], ["updated_at", "2021-05-26 18:43:26.440074"], ["id", 9]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:30:in `update'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:30:in `update'
+Completed 200 OK in 31ms (Views: 0.8ms | ActiveRecord: 7.4ms | Allocations: 2300)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:43:29 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 2.3ms | Allocations: 1230)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:50:09 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 104ms (Views: 94.6ms | ActiveRecord: 24.6ms | Allocations: 3252)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:53:31 -0400
+  
+SyntaxError (/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected '{', expecting end
+...      render json: @campaigns {
+...                              ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+        }
+        ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:59: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected '{', expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:59: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected '{', expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:59: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:54:38 -0400
+  
+SyntaxError (/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+...render json: @campaigns include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+        }
+        ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:59: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:59: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:59: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:54:40 -0400
+  
+SyntaxError (/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+...render json: @campaigns include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+        }
+        ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:59: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:59: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:59: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-26 14:54:56 -0400
+  
+SyntaxError (/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+...render json: @campaigns include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+        }
+        ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting end
+... render json: @campaign include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:20: syntax error, unexpected '}', expecting end
+          }
+          ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:62: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:20: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:62: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:20: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:62: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-27 11:17:50 -0400
+  
+SyntaxError (/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+...render json: @campaigns include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+        }
+        ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting end
+... render json: @campaign include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:20: syntax error, unexpected '}', expecting end
+          }
+          ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:62: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:20: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:62: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:20: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:62: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-27 11:18:06 -0400
+  
+SyntaxError (/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+...render json: @campaigns include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+        }
+        ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting end
+... render json: @campaign include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:20: syntax error, unexpected '}', expecting end
+          }
+          ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:62: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:20: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:62: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:12: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:17: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:20: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:62: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-27 11:21:30 -0400
+  
+SyntaxError (/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+...render json: @campaigns include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting end
+... render json: @campaign include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:21: syntax error, unexpected '}', expecting end
+          }
+          ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:63: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:21: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:63: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:21: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:63: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-27 11:21:32 -0400
+  
+SyntaxError (/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+...render json: @campaigns include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting end
+... render json: @campaign include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:21: syntax error, unexpected '}', expecting end
+          }
+          ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:63: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:21: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:63: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/campaigns_controller.rb:9: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:21: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:63: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-27 11:22:45 -0400
+  
+SyntaxError (/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting end
+... render json: @campaign include: {
+...                        ^~~~~~~
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:21: syntax error, unexpected '}', expecting end
+          }
+          ^
+/Users/maxine1/Development/code/code4/JSproject/growfundgreen/app/controllers/api/v1/campaigns_controller.rb:63: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/api/v1/campaigns_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:21: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:63: syntax error, unexpected end-of-input, expecting end
+app/controllers/api/v1/campaigns_controller.rb:18: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/api/v1/campaigns_controller.rb:21: syntax error, unexpected '}', expecting end
+app/controllers/api/v1/campaigns_controller.rb:63: syntax error, unexpected end-of-input, expecting end
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-27 11:23:13 -0400
+Processing by Api::V1::CampaignsController#index as HTML
+  [1m[36mCampaign Load (11.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 3]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 4]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 7]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 5]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 2]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 9]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 487ms (Views: 449.3ms | ActiveRecord: 211.8ms | Allocations: 16138)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-27 11:23:17 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.0ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 3]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 4]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 7]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 5]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 2]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 9]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 4.3ms | Allocations: 5473)
+
+
+Started PATCH "/api/v1/campaigns/9" for 127.0.0.1 at 2021-05-27 11:23:35 -0400
+Processing by Api::V1::CampaignsController#update as JSON
+  Parameters: {"name"=>"sample event", "description"=>"sample event", "goal"=>"000000", "id"=>"9", "campaign"=>{"name"=>"sample event", "description"=>"sample event", "goal"=>"000000"}}
+  [1m[36mCampaign Load (5.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:57:in `set_campaign'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:38:in `update'
+  [1m[36mCampaign Update (11.5ms)[0m  [1m[33mUPDATE "campaigns" SET "name" = $1, "description" = $2, "goal" = $3, "updated_at" = $4 WHERE "campaigns"."id" = $5[0m  [["name", "sample event"], ["description", "sample event"], ["goal", 0], ["updated_at", "2021-05-27 15:23:35.897808"], ["id", 9]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:38:in `update'
+Completed 200 OK in 34ms (Views: 0.4ms | ActiveRecord: 21.5ms | Allocations: 2465)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-05-27 11:23:38 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 3]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 4]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 7]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 5]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 2]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 9]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 30ms (Views: 24.4ms | ActiveRecord: 5.7ms | Allocations: 5472)
+
+

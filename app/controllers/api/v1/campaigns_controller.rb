@@ -6,12 +6,20 @@ class Api::V1::CampaignsController < ApplicationController
         
         @campaigns = Campaign.all
        
-        render json: @campaigns
+        render json: @campaigns, include: {
+          donations: {
+            except: [:created_at, :updated_at]
+          }
+        }
     end
 
     #GET /campaigns/1
         def show
-          render json: @campaign
+          render json: @campaign, include: {
+            donations: {
+              except: [:created_at, :updated_at]
+            }
+          }
     end
 
     # POST /campaigns
