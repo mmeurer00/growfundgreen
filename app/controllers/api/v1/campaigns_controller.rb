@@ -18,7 +18,7 @@ class Api::V1::CampaignsController < ApplicationController
           render json: @campaign, include: {
             donations: {
               except: [:created_at, :updated_at]
-            }
+          }
           }
     end
 
