@@ -1,7 +1,7 @@
-class DonationsController < ApplicationController
+class Api::V1::DonationsController < ApplicationController
   before_action :set_donation, only: [:show, :update, :destroy]
 
-  GET /donations
+ # GET /donations
   def index
     @donations = Donation.all
 
@@ -15,12 +15,13 @@ class DonationsController < ApplicationController
 
   # POST /donations
   def create
-    @donation = Donation.new(donation_params)
+    campaign = Campaign.find_by(id: params[:campaign_id])
+    @donation = campaign.donations.build(donation_params)
 
     if @donation.save
       render json: @donation, status: :created, location: @donation
     else
-      render json: @donation.errors, status: :unprocessable_entity
+     render json: @donation.errors, status: :unprocessable_entity
     end
   end
 
