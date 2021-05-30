@@ -44,6 +44,7 @@ class Api::V1::CampaignsController < ApplicationController
 
     # DELETE /campaigns/1
     def destroy
+      @campaign.donations.destroy_all
       if @campaign.destroy
         render json: {message: "Successfully deleted"}
       else
