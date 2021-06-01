@@ -8,17 +8,11 @@
 
 
 saveTheWhales = Campaign.create(name: "Save the Whales", description: "Stop whaling", goal: "50000")
-donationOne = Donation.create(comment: "Good luck!", price: 6.50, campaign_id: 19)
-donationTwo = Donation.create(comment: "You rock!", price: 100, campaign_id: 20)
-donationThree = Donation.create(comment: "heck yeah", price: 100, campaign_id: 20)
+
 saveTheSharks = Campaign.create(name: "Save the Sharks", description: "Stop shark fining", goal: "60000")
-donationFour = Donation.create(comment: "yeah", price: 2220000, campaign_id: 21)
 
 saveTheOcean = Campaign.create(name: "Save the Ocean", description: "Stop plastic pollution", goal: "500000")
-donationOne.save
-donationTwo.save
-donationThree.save
-donationFour.save
+
 saveTheOcean.save
 saveTheWhales.save
 saveTheSharks.save
