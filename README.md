@@ -21,9 +21,9 @@ Users can access Grow Fund Green **(backend)** by cloning this repository.
 user@Users-MacBook_Air % git clone [paste link]
 ```
 
-5. Navigate to the  file.
+5. Navigate to the growfundgreen file.
 ```
-user@Users-MacBook_Air  % 
+user@Users-MacBook_Air growfundgreen % 
 ```
 6. Run 'bundle install', followed by 'rails db:migrate', in your terminal:
 ```
