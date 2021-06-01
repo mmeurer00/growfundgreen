@@ -19,9 +19,10 @@ class Api::V1::DonationsController < ApplicationController
     @donation = campaign.donations.build(donation_params)
 
     if @donation.save
-      render json: @donation, status: :created, location: @donation
+      render json: {donation: @donation, status: 201}, location: @donation
     else
-     render json: @donation.errors, status: :unprocessable_entity
+      flash.now[:notice] = "Donation DID NOT save. Fill in all fields. "
+      render json: @donation.errors, status: :unprocessable_entity
     end
   end
 
