@@ -27,13 +27,13 @@ user@Users-MacBook_Air growfundgreen %
 ```
 6. Run 'bundle install', followed by 'rails db:migrate', in your terminal:
 ```
-user@Users-MacBook_Air  % bundle install
+user@Users-MacBook_Air growfundgreen % bundle install
 
-user@Users-MacBook_Air  % rails db:migrate
+user@Users-MacBook_Air growfundgreen % rails db:migrate
 ```
 7. Once inside growFundGreen run the program by typing 'rails s' in your terminal:
 ```
-user@Users-MacBook_Air growFundGreen % rails s 
+user@Users-MacBook_Air growfundgreen % rails s 
 ```
 8. Finally click on the link following '* Listening on':
 ```
