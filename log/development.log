@@ -19308,3 +19308,1146 @@ Processing by Api::V1::CampaignsController#destroy as */*
 Completed 200 OK in 47ms (Views: 0.3ms | ActiveRecord: 24.8ms | Allocations: 3832)
 
 
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:02:35 -0400
+  [1m[35m (22.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (12.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (12.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 249ms (Views: 103.1ms | ActiveRecord: 102.9ms | Allocations: 17014)
+
+
+Started POST "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:03:17 -0400
+Processing by Api::V1::CampaignsController#create as JSON
+  Parameters: {"name"=>"Stop Logging", "description"=>"Help end logging in the Amazon rainforest, decrease agricultural land use. Thank you for helping us reach our goal!!!! ", "goal"=>"10", "campaign"=>{"name"=>"Stop Logging", "description"=>"Help end logging in the Amazon rainforest, decrease agricultural land use. Thank you for helping us reach our goal!!!! ", "goal"=>"10"}}
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:29:in `create'
+  [1m[36mCampaign Create (49.6ms)[0m  [1m[32mINSERT INTO "campaigns" ("name", "description", "goal", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Stop Logging"], ["description", "Help end logging in the Amazon rainforest, decrease agricultural land use. Thank you for helping us reach our goal!!!! "], ["goal", 10], ["created_at", "2021-06-07 17:03:17.099971"], ["updated_at", "2021-06-07 17:03:17.099971"]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:29:in `create'
+Completed 201 Created in 87ms (Views: 1.0ms | ActiveRecord: 63.4ms | Allocations: 2140)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:03:17 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 4.5ms | Allocations: 4154)
+
+
+Started POST "/api/v1/campaigns/35/donations" for 127.0.0.1 at 2021-06-07 13:03:29 -0400
+Processing by Api::V1::DonationsController#create as JSON
+  Parameters: {"comment"=>"I hope this helps", "price"=>"1000", "campaign_id"=>"35", "donation"=>{"comment"=>"I hope this helps", "price"=>"1000"}}
+  [1m[36mCampaign Load (6.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/donations_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:03:29 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mDonation Create (30.3ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "price", "campaign_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", "I hope this helps"], ["price", 1000.0], ["campaign_id", 35], ["created_at", "2021-06-07 17:03:29.391990"], ["updated_at", "2021-06-07 17:03:29.391990"]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+Completed 200 OK in 67ms (Views: 2.9ms | ActiveRecord: 42.1ms | Allocations: 3825)
+
+
+  [1m[36mCampaign Load (1.0ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 76ms (Views: 42.2ms | ActiveRecord: 33.0ms | Allocations: 7655)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:11:11 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 166ms (Views: 157.6ms | ActiveRecord: 32.3ms | Allocations: 6274)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:11:25 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 36ms (Views: 18.8ms | ActiveRecord: 16.7ms | Allocations: 4204)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:11:42 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 51ms (Views: 26.1ms | ActiveRecord: 23.8ms | Allocations: 4201)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:16:01 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 161ms (Views: 142.4ms | ActiveRecord: 3.5ms | Allocations: 4202)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:16:09 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 40ms (Views: 26.5ms | ActiveRecord: 12.9ms | Allocations: 4201)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:20:20 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.7ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 198ms (Views: 135.9ms | ActiveRecord: 4.3ms | Allocations: 4201)
+
+
+Started PATCH "/api/v1/campaigns/35" for 127.0.0.1 at 2021-06-07 13:20:37 -0400
+Processing by Api::V1::CampaignsController#update as JSON
+  Parameters: {"name"=>"Stop Logging", "description"=>"Help end logging in the Amazon rainforest.  ", "goal"=>"10", "id"=>"35", "campaign"=>{"name"=>"Stop Logging", "description"=>"Help end logging in the Amazon rainforest.  ", "goal"=>"10"}}
+  [1m[36mCampaign Load (1.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:58:in `set_campaign'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:38:in `update'
+  [1m[36mCampaign Update (17.0ms)[0m  [1m[33mUPDATE "campaigns" SET "description" = $1, "updated_at" = $2 WHERE "campaigns"."id" = $3[0m  [["description", "Help end logging in the Amazon rainforest.  "], ["updated_at", "2021-06-07 17:20:37.122824"], ["id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:38:in `update'
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:38:in `update'
+Completed 200 OK in 61ms (Views: 0.9ms | ActiveRecord: 25.5ms | Allocations: 2435)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 13:20:37 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 108ms (Views: 62.1ms | ActiveRecord: 43.9ms | Allocations: 6377)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 14:59:09 -0400
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (13.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 297ms (Views: 117.5ms | ActiveRecord: 56.2ms | Allocations: 17893)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:01:07 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 47ms (Views: 40.1ms | ActiveRecord: 3.0ms | Allocations: 4222)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:02:05 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.0ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 3.1ms | Allocations: 4222)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:02:07 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (12.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (9.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 64ms (Views: 27.7ms | ActiveRecord: 35.5ms | Allocations: 4222)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:02:26 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 34ms (Views: 20.9ms | ActiveRecord: 12.8ms | Allocations: 4201)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:02:28 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (6.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 59ms (Views: 29.9ms | ActiveRecord: 29.0ms | Allocations: 4204)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:02:39 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (8.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (13.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (7.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (17.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (7.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 97ms (Views: 40.8ms | ActiveRecord: 54.8ms | Allocations: 4222)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:03:20 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 54ms (Views: 46.1ms | ActiveRecord: 5.3ms | Allocations: 4201)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:03:29 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (8.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 43ms (Views: 28.6ms | ActiveRecord: 14.2ms | Allocations: 4201)
+
+
+Started PATCH "/api/v1/campaigns/17" for 127.0.0.1 at 2021-06-07 15:03:37 -0400
+Processing by Api::V1::CampaignsController#update as JSON
+  Parameters: {"name"=>"Save the Sharks", "description"=>"Stop shark fining    ", "goal"=>"1000000", "id"=>"17", "campaign"=>{"name"=>"Save the Sharks", "description"=>"Stop shark fining    ", "goal"=>"1000000"}}
+  [1m[36mCampaign Load (22.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:58:in `set_campaign'
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:38:in `update'
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:03:38 -0400
+  [1m[36mCampaign Update (346.0ms)[0m  [1m[33mUPDATE "campaigns" SET "description" = $1, "updated_at" = $2 WHERE "campaigns"."id" = $3[0m  [["description", "Stop shark fining    "], ["updated_at", "2021-06-07 19:03:37.898301"], ["id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:38:in `update'
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mTRANSACTION (9.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:38:in `update'
+Completed 200 OK in 443ms (Views: 0.4ms | ActiveRecord: 382.2ms | Allocations: 3730)
+
+
+  [1m[36mCampaign Load (6.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 227ms (Views: 179.2ms | ActiveRecord: 47.6ms | Allocations: 7062)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:03:58 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (5.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (8.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 69ms (Views: 36.4ms | ActiveRecord: 29.6ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:04:09 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (7.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 55ms (Views: 27.7ms | ActiveRecord: 27.0ms | Allocations: 4200)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:04:24 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (7.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (8.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 51ms (Views: 23.5ms | ActiveRecord: 27.2ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:04:42 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (6.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (10.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 49ms (Views: 24.7ms | ActiveRecord: 23.9ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:05:16 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (13.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 64ms (Views: 33.8ms | ActiveRecord: 29.4ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:07:38 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 65ms (Views: 53.8ms | ActiveRecord: 4.8ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:09:19 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 83ms (Views: 73.6ms | ActiveRecord: 5.9ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:09:28 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (4.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (9.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (9.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 70ms (Views: 39.8ms | ActiveRecord: 28.8ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:10:36 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (8.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 219ms (Views: 197.8ms | ActiveRecord: 10.7ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:11:01 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 366ms (Views: 359.5ms | ActiveRecord: 5.9ms | Allocations: 4203)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:11:09 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 301ms (Views: 295.8ms | ActiveRecord: 4.3ms | Allocations: 4203)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:11:56 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 142ms (Views: 139.0ms | ActiveRecord: 2.1ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:12:44 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (9.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 43ms (Views: 19.9ms | ActiveRecord: 22.1ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:12:47 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (7.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 51ms (Views: 23.4ms | ActiveRecord: 27.3ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:13:00 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (9.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (9.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 54ms (Views: 22.9ms | ActiveRecord: 30.4ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:13:27 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (7.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 133ms (Views: 118.0ms | ActiveRecord: 13.8ms | Allocations: 4203)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:13:30 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 45ms (Views: 28.1ms | ActiveRecord: 16.9ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:13:47 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 44ms (Views: 28.7ms | ActiveRecord: 15.4ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:14:24 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (9.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (11.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 59ms (Views: 24.0ms | ActiveRecord: 33.7ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:14:39 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (4.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 38ms (Views: 19.8ms | ActiveRecord: 18.3ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:14:56 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (4.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 37ms (Views: 23.3ms | ActiveRecord: 13.3ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:15:19 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (8.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 47ms (Views: 22.9ms | ActiveRecord: 23.7ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:16:26 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 50ms (Views: 26.5ms | ActiveRecord: 19.3ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:16:43 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (8.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (7.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 50ms (Views: 22.0ms | ActiveRecord: 27.2ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:16:51 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 43ms (Views: 23.0ms | ActiveRecord: 19.7ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:17:00 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (4.0ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (10.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 50ms (Views: 21.8ms | ActiveRecord: 27.6ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:17:57 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (10.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 47ms (Views: 26.3ms | ActiveRecord: 20.6ms | Allocations: 4199)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:19:02 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (5.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (8.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (5.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 59ms (Views: 27.9ms | ActiveRecord: 30.0ms | Allocations: 4199)
+
+
+Started POST "/api/v1/campaigns/34/donations" for 127.0.0.1 at 2021-06-07 15:19:32 -0400
+Processing by Api::V1::DonationsController#create as JSON
+  Parameters: {"comment"=>"Stop that deforestation!", "price"=>"100", "campaign_id"=>"34", "donation"=>{"comment"=>"Stop that deforestation!", "price"=>"100"}}
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:19:32 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (28.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/donations_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCampaign Load (1.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 118ms (Views: 59.1ms | ActiveRecord: 57.9ms | Allocations: 7788)
+
+
+  [1m[36mDonation Create (31.5ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "price", "campaign_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", "Stop that deforestation!"], ["price", 100.0], ["campaign_id", 34], ["created_at", "2021-06-07 19:19:32.572425"], ["updated_at", "2021-06-07 19:19:32.572425"]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (9.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+Completed 200 OK in 156ms (Views: 3.0ms | ActiveRecord: 71.8ms | Allocations: 9841)
+
+
+Started POST "/api/v1/campaigns/34/donations" for 127.0.0.1 at 2021-06-07 15:19:53 -0400
+Processing by Api::V1::DonationsController#create as JSON
+  Parameters: {"comment"=>"I hope this helps!!!", "price"=>"10000", "campaign_id"=>"34", "donation"=>{"comment"=>"I hope this helps!!!", "price"=>"10000"}}
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:19:53 -0400
+  [1m[36mCampaign Load (1.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+Processing by Api::V1::CampaignsController#index as */*
+  ↳ app/controllers/api/v1/donations_controller.rb:18:in `create'
+  [1m[36mCampaign Load (0.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Create (13.9ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "price", "campaign_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", "I hope this helps!!!"], ["price", 10000.0], ["campaign_id", 34], ["created_at", "2021-06-07 19:19:53.607543"], ["updated_at", "2021-06-07 19:19:53.607543"]]
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mTRANSACTION (19.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 567ms (Views: 1.0ms | ActiveRecord: 35.5ms | Allocations: 6071)
+
+
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 521ms (Views: 516.9ms | ActiveRecord: 2.9ms | Allocations: 6629)
+
+
+Started POST "/api/v1/campaigns/34/donations" for 127.0.0.1 at 2021-06-07 15:20:16 -0400
+Processing by Api::V1::DonationsController#create as JSON
+  Parameters: {"comment"=>"keep going", "price"=>"5", "campaign_id"=>"34", "donation"=>{"comment"=>"keep going", "price"=>"5"}}
+  [1m[36mCampaign Load (1.7ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/donations_controller.rb:18:in `create'
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:20:16 -0400
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::V1::CampaignsController#index as */*
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mCampaign Load (0.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Create (2.1ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "price", "campaign_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", "keep going"], ["price", 5.0], ["campaign_id", 34], ["created_at", "2021-06-07 19:20:16.841533"], ["updated_at", "2021-06-07 19:20:16.841533"]]
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 535ms (Views: 0.8ms | ActiveRecord: 13.7ms | Allocations: 5256)
+
+
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 368ms (Views: 364.6ms | ActiveRecord: 2.5ms | Allocations: 5732)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:23:22 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (4.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 121ms (Views: 104.9ms | ActiveRecord: 8.8ms | Allocations: 4407)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:23:25 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (8.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 53ms (Views: 35.3ms | ActiveRecord: 13.3ms | Allocations: 4407)
+
+
+Started POST "/api/v1/campaigns/35/donations" for 127.0.0.1 at 2021-06-07 15:23:35 -0400
+Processing by Api::V1::DonationsController#create as JSON
+  Parameters: {"comment"=>"I hope this helps :)", "price"=>"1", "campaign_id"=>"35", "donation"=>{"comment"=>"I hope this helps :)", "price"=>"1"}}
+  [1m[36mCampaign Load (7.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/donations_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mDonation Create (9.9ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "price", "campaign_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", "I hope this helps :)"], ["price", 1.0], ["campaign_id", 35], ["created_at", "2021-06-07 19:23:35.053635"], ["updated_at", "2021-06-07 19:23:35.053635"]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+Completed 200 OK in 63ms (Views: 8.7ms | ActiveRecord: 26.6ms | Allocations: 2438)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:23:35 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 28ms (Views: 22.7ms | ActiveRecord: 5.1ms | Allocations: 4475)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:29:40 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (7.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 289ms (Views: 221.5ms | ActiveRecord: 37.3ms | Allocations: 6601)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:33:20 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.5ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 39ms (Views: 27.9ms | ActiveRecord: 10.0ms | Allocations: 4475)
+
+
+Started POST "/api/v1/campaigns/35/donations" for 127.0.0.1 at 2021-06-07 15:33:35 -0400
+Processing by Api::V1::DonationsController#create as JSON
+  Parameters: {"comment"=>"Save those monkeys", "price"=>"67", "campaign_id"=>"35", "donation"=>{"comment"=>"Save those monkeys", "price"=>"67"}}
+  [1m[36mCampaign Load (1.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/donations_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mDonation Create (13.2ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "price", "campaign_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", "Save those monkeys"], ["price", 67.0], ["campaign_id", 35], ["created_at", "2021-06-07 19:33:35.892397"], ["updated_at", "2021-06-07 19:33:35.892397"]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (22.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+Completed 200 OK in 82ms (Views: 1.5ms | ActiveRecord: 42.5ms | Allocations: 2436)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:33:35 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.7ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (2.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 39ms (Views: 32.6ms | ActiveRecord: 5.6ms | Allocations: 4543)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:36:46 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (2.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (11.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (8.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 65ms (Views: 36.1ms | ActiveRecord: 27.7ms | Allocations: 4543)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:36:49 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.4ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (7.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 55ms (Views: 31.5ms | ActiveRecord: 22.6ms | Allocations: 4543)
+
+
+Started POST "/api/v1/campaigns/17/donations" for 127.0.0.1 at 2021-06-07 15:37:02 -0400
+Processing by Api::V1::DonationsController#create as JSON
+  Parameters: {"comment"=>"Please stop the finning", "price"=>"55", "campaign_id"=>"17", "donation"=>{"comment"=>"Please stop the finning", "price"=>"55"}}
+  [1m[36mCampaign Load (9.6ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/donations_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mDonation Create (3.7ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "price", "campaign_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", "Please stop the finning"], ["price", 55.0], ["campaign_id", 17], ["created_at", "2021-06-07 19:37:02.468487"], ["updated_at", "2021-06-07 19:37:02.468487"]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+Completed 200 OK in 41ms (Views: 2.2ms | ActiveRecord: 22.0ms | Allocations: 2431)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:37:02 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (4.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (4.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.0ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (3.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 51ms (Views: 31.0ms | ActiveRecord: 18.8ms | Allocations: 4611)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:39:27 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (3.0ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (6.2ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (1.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 37ms (Views: 24.1ms | ActiveRecord: 12.0ms | Allocations: 4611)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:40:47 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.6ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+  [1m[36mDonation Load (0.8ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:9:in `index'
+Completed 200 OK in 58ms (Views: 48.7ms | ActiveRecord: 4.4ms | Allocations: 4611)
+
+
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:52:20 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (1.1ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.9ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+Completed 200 OK in 127ms (Views: 112.1ms | ActiveRecord: 22.9ms | Allocations: 14024)
+
+
+Started POST "/api/v1/campaigns/17/donations" for 127.0.0.1 at 2021-06-07 15:52:35 -0400
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:52:35 -0400
+Processing by Api::V1::DonationsController#create as JSON
+  Parameters: {"comment"=>"brand new donation!", "price"=>"0", "campaign_id"=>"17", "donation"=>{"comment"=>"brand new donation!", "price"=>"0"}}
+  [1m[36mCampaign Load (1.8ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/donations_controller.rb:18:in `create'
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 84.6ms | Allocations: 7619)
+
+
+  
+NameError (undefined local variable or method `flash' for #<Api::V1::DonationsController:0x007fe7d7a9f2b0>):
+  
+app/controllers/api/v1/donations_controller.rb:24:in `create'
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mCampaign Load (0.3ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.4ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+Completed 200 OK in 54ms (Views: 30.0ms | ActiveRecord: 20.9ms | Allocations: 12421)
+
+
+Started POST "/api/v1/campaigns/17/donations" for 127.0.0.1 at 2021-06-07 15:52:44 -0400
+Processing by Api::V1::DonationsController#create as JSON
+  Parameters: {"comment"=>"brand new donation!", "price"=>"1", "campaign_id"=>"17", "donation"=>{"comment"=>"brand new donation!", "price"=>"1"}}
+  [1m[36mCampaign Load (4.2ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns" WHERE "campaigns"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/donations_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+Started GET "/api/v1/campaigns" for 127.0.0.1 at 2021-06-07 15:52:44 -0400
+Processing by Api::V1::CampaignsController#index as */*
+  [1m[36mDonation Create (91.0ms)[0m  [1m[32mINSERT INTO "donations" ("comment", "price", "campaign_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["comment", "brand new donation!"], ["price", 1.0], ["campaign_id", 17], ["created_at", "2021-06-07 19:52:44.805878"], ["updated_at", "2021-06-07 19:52:44.805878"]]
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (21.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/donations_controller.rb:21:in `create'
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 125.0ms | Allocations: 3750)
+
+
+  
+NoMethodError (undefined method `donation_url' for #<Api::V1::DonationsController:0x007fe7d4453378>):
+  
+app/controllers/api/v1/donations_controller.rb:22:in `create'
+  [1m[36mCampaign Load (0.9ms)[0m  [1m[34mSELECT "campaigns".* FROM "campaigns"[0m
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.7ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 35]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (1.3ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 17]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (0.5ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 33]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+  [1m[36mDonation Load (2.1ms)[0m  [1m[34mSELECT "donations".* FROM "donations" WHERE "donations"."campaign_id" = $1[0m  [["campaign_id", 34]]
+  ↳ app/controllers/api/v1/campaigns_controller.rb:8:in `index'
+Completed 200 OK in 138ms (Views: 120.4ms | ActiveRecord: 17.4ms | Allocations: 25463)
+
+
