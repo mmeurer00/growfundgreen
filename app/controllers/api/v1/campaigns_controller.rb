@@ -13,12 +13,12 @@ class Api::V1::CampaignsController < ApplicationController
     end
 
     #GET /campaigns/1
-        def show
-          render json: @campaign, include: {
-            donations: {
-              except: [:created_at, :updated_at]
-          }
-          }
+    def show
+      render json: @campaign, include: {
+        donations: {
+          except: [:created_at, :updated_at]
+        }
+      }
     end
 
     # POST /campaigns
@@ -26,18 +26,30 @@ class Api::V1::CampaignsController < ApplicationController
       @campaign = Campaign.new(campaign_params)
 
       if @campaign.save
-        render json: @campaign, status: :created, location: api_v1_campaign_path(@campaign)
+        render json: {
+          status: 201,
+          campaign: @campaign
+        }, status: :created, location: api_v1_campaign_path(@campaign)
       else
-        render json: @campaign.errors, status: :unprocessable_entity
+       render json: {
+         status: 402,
+         errors: @campaign.errors.full_messages.join(",")
+        }, status: :unprocessable_entity
       end
     end
 
     # PATCH/PUT /campaigns/1
     def update
       if @campaign.update(campaign_params)
-        render json: @campaign
+        render json: {
+          status: 204,
+          campaign: @campaign
+      }
       else
-        render json: @campaign.errors, status: :unprocessable_entity
+        render json: {
+          status: 400,
+          errors: @campaign.errors.full_messages.join(",")
+        }, status: :unprocessable_entity
       end
     end
 

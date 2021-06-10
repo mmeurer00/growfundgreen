@@ -19,14 +19,14 @@ class Api::V1::DonationsController < ApplicationController
     @donation = campaign.donations.build(donation_params)
 
     if @donation.save
-      render json: {donation: @donation, status: 201}, location: @donation
+      render json: {donation: @donation, status: 201}, location: api_v1_campaign_path(@donation)
     else
       flash.now[:notice] = "Donation DID NOT save. Fill in all fields. "
       render json: @donation.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /donations/1
+  #PATCH/PUT /donations/1
   def update
     if @donation.update(donation_params)
       render json: @donation
@@ -35,7 +35,7 @@ class Api::V1::DonationsController < ApplicationController
     end
   end
 
-  # DELETE /donations/1
+  #DELETE /donations/1
   def destroy
     @donation.destroy
   end
